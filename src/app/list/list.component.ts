@@ -13,6 +13,7 @@ export class ListComponent implements OnInit {
   ngOnInit() {
   }
 
+  // list of tasks
   tasks: { id: number, value: String, isCurrent: boolean }[] = [
     {
       id: 0,
@@ -31,8 +32,22 @@ export class ListComponent implements OnInit {
     }
   ];
 
-  taskDone = (id: number): void => {
+  // Complete or restore a task
+  taskState = (id: number): void => {
     this.tasks[id].isCurrent = !this.tasks[id].isCurrent;
+  };
+
+  // Add a task 
+  addTask = (id: number, value: String, isCurrent: boolean) => {
+    // Get task
+    let task = {
+      id: id,
+      value: value,
+      isCurrent: isCurrent
+    };
+
+    // Add task to array
+    this.tasks.push(task);
   };
 
 }

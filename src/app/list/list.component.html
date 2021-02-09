@@ -3,17 +3,26 @@
   <h2>Task done</h2>
   <div *ngFor="let task of tasks">
     <div *ngIf="!task.isCurrent">
-      <input type="text" value="{{task.value}}" (click)="taskDone(task.id)">
+      <input type="text" value="{{task.value}}" (click)="taskState(task.id)">
     </div>
   </div>
 </div>
 
+<hr>
 <!-- Task in progress -->
 <h2>Task in progress</h2>
 <div class="taskInProgress">
   <div *ngFor="let task of tasks">
     <div *ngIf="task.isCurrent">
-      <input type="text" value="{{task.value}}" (click)="taskDone(task.id)">
+      <input type="text" value="{{task.value}}" (click)="taskState(task.id)">
     </div>
   </div>
+</div>
+
+<hr>
+<!-- Add a task -->
+<div>
+  <h2>Add a task</h2>
+  <input type="text" #task placeholder="Enter a task">
+  <button (click)="addTask(5, task.value, true)">Submit</button>
 </div>
