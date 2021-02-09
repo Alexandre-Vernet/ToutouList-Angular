@@ -3,26 +3,39 @@
   <h2>Task done</h2>
   <div *ngFor="let task of tasks">
     <div *ngIf="!task.isCurrent">
-      <input type="text" value="{{task.value}}" (click)="taskState(task.id)">
+      <div class="form-group">
+        <input class="form-control" type="text" value="{{task.value}}" (click)="taskState(task.id)">
+        <small class="form-text text-muted">{{task.time}}</small>
+      </div>
     </div>
   </div>
 </div>
 
+<br>
 <hr>
 <!-- Task in progress -->
 <h2>Task in progress</h2>
 <div class="taskInProgress">
   <div *ngFor="let task of tasks">
     <div *ngIf="task.isCurrent">
-      <input type="text" value="{{task.value}}" (click)="taskState(task.id)">
+      <div class="form-group">
+        <input class="form-control" type="text" value="{{task.value}}" (click)="taskState(task.id)">
+        <small class="form-text text-muted">{{task.time}}</small>
+      </div>
     </div>
   </div>
 </div>
 
+<br>
 <hr>
 <!-- Add a task -->
-<div>
-  <h2>Add a task</h2>
-  <input type="text" #task placeholder="Enter a task">
-  <button (click)="addTask(task.value)">Submit</button>
+<h2>Add a task</h2>
+<div class="form-row">
+  <div class="col">
+    <input class="form-control" type="text" #task placeholder="Balader zibo">
+  </div>
+  <div class="col">
+    <input type="time" #time value="12:00">
+  </div>
 </div>
+<button class="my-3 btn btn-primary" (click)="addTask(task.value, time.value)">Submit</button>
