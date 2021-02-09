@@ -2,7 +2,7 @@
 <div class="task">
   <h2>Task done</h2>
   <div *ngFor="let task of tasks">
-    <input type="text" value="{{task.value}}" (click)="taskDone()">
+    <input type="text" value="{{task.value}}">
   </div>
 </div>
 
@@ -10,6 +10,6 @@
 <h2>Task in progress</h2>
 <div class="taskInProgress">
   <div *ngFor="let task of tasks">
-    <input type="text" value="{{task.value}}" (click)="taskDone()" [(ngModel)]="task.value">
+    <input type="text" value="{{task.value}}" (click)="taskDone(task.id)">
   </div>
 </div>

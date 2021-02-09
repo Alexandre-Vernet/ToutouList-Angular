@@ -1,3 +1,4 @@
+import { NgIf } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -12,19 +13,26 @@ export class ListComponent implements OnInit {
   ngOnInit() {
   }
 
-  tasks: { id: number, value: String }[] = [
+  tasks: { id: number, value: String, isCurrent: boolean }[] = [
+    {
+      id: 0,
+      value: "Promener Robert",
+      isCurrent: true
+    },
     {
       id: 1,
-      value: "Promener Robert"
+      value: "Balader truc",
+      isCurrent: true
     },
     {
       id: 2,
-      value: "Balader truc"
+      value: "Rentrer bidule",
+      isCurrent: true
     }
   ];
 
-  taskDone = (): void => {
-    
+  taskDone = (id: number): void => {
+    this.tasks[id].isCurrent = false;
   };
 
 }
