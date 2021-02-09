@@ -8,11 +8,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
   // list of tasks
   tasks: { id: number, value: String, isCurrent: boolean }[] = [
     {
@@ -32,22 +27,36 @@ export class ListComponent implements OnInit {
     }
   ];
 
+  constructor() { }
+
+  ngOnInit() {
+
+  }
+
+
   // Complete or restore a task
   taskState = (id: number): void => {
     this.tasks[id].isCurrent = !this.tasks[id].isCurrent;
   };
 
   // Add a task 
-  addTask = (id: number, value: String, isCurrent: boolean) => {
+  addTask = (value: String) => {
+
+    // Find id for this task
+    let id = this.tasks.length + 1;
+
     // Get task
     let task = {
       id: id,
       value: value,
-      isCurrent: isCurrent
+      isCurrent: true
     };
 
     // Add task to array
     this.tasks.push(task);
+
+    console.log(this.tasks);
+    
   };
 
 }
