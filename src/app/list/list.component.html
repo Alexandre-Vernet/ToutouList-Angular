@@ -19,8 +19,9 @@
   <div *ngFor="let task of tasks">
     <div *ngIf="task.isCurrent">
       <div class="form-group">
-        <input class="form-control" type="text" value="{{task.value}}" (click)="taskState(task.id)">
+        <input class="form-control" type="text" [(ngModel)]="task.value">
         <small class="form-text text-muted">{{task.time}}</small>
+        <button class="btn btn-success" (click)="taskState(task.id)">Done</button>
       </div>
     </div>
   </div>
