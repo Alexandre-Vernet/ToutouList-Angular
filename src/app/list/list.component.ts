@@ -43,7 +43,7 @@ export class ListComponent implements OnInit {
   addTask = (value: String) => {
 
     // Find id for this task
-    let id = this.tasks.length + 1;
+    let id = this.tasks.length;
 
     // Get task
     let task = {
