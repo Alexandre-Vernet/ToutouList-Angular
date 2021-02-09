@@ -60,6 +60,5 @@ export class ListComponent implements OnInit {
     this.tasks.push(task);
 
     console.log(this.tasks);
-    
   };
 }

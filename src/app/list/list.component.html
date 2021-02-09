@@ -32,10 +32,10 @@
 <h2>Add a task</h2>
 <div class="form-row">
   <div class="col">
-    <input class="form-control" type="text" #task placeholder="Balader zibo">
+    <input class="form-control" type="text" placeholder="Sortir zibo" [(ngModel)]="task">
   </div>
   <div class="col">
-    <input type="time" #time value="12:00">
+    <input type="time" [(ngModel)]="time" value="12:00">
   </div>
 </div>
-<button class="my-3 btn btn-primary" (click)="addTask(task.value, time.value)">Submit</button>
+<button class="my-3 btn btn-primary" [disabled]="!task" (click)="addTask(task, time)">Submit</button>
