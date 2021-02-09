@@ -18,9 +18,13 @@ export class ListComponent implements OnInit {
       value: "Promener Robert"
     },
     {
-      id: 1,
-      value: "Promener Robert"
+      id: 2,
+      value: "Balader truc"
     }
   ];
+
+  taskDone = (): void => {
+    
+  };
 
 }
