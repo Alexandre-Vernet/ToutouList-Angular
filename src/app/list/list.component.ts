@@ -8,6 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListComponent implements OnInit {
 
+  task: String = "";
+  time: String = "";
+
   // list of tasks
   tasks: { id: number, value: String, isCurrent: boolean, time: String }[] = [
     {
