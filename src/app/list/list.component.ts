@@ -32,7 +32,7 @@ export class ListComponent implements OnInit {
   ];
 
   taskDone = (id: number): void => {
-    this.tasks[id].isCurrent = false;
+    this.tasks[id].isCurrent = !this.tasks[id].isCurrent;
   };
 
 }
